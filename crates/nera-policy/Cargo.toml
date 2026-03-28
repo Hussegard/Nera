@@ -1,0 +1,11 @@
+[package]
+name = "nera-policy"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+nera-core = {path = "../nera-core"}
+serde = { version = "1.0.228", features = ["derive"] }
+thiserror = "2.0.18"
+toml = "1.1.0"
+tracing = "0.1.44"

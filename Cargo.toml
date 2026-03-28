@@ -1,0 +1,9 @@
+[workspace]
+members = [ 
+    "crates/nera-core",
+    "crates/nera-sandbox",
+    "crates/nera-policy",
+    "crates/nera-audit",
+    "crates/nera-server",
+]
+resolver = "2"
