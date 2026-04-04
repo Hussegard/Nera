@@ -85,8 +85,8 @@ pub async fn run_local (command: &str, timeout_secs: u64) -> Result<ExecutionRes
     // .take() removes the pipe from child and gives it to us.
     // .ok_or(SandboxError::FailedToStart)? means: if take() returns None
     // (pipe wasn't set up for some reason), return FailedToStart immediately.
-    let mut stdout_pipe = child.stdout.ok_or(SandboxError::FailedToStart)?;
-    let mut stderr_pipe = child.stderr.ok_or(SandboxError::FailedToStart)?;
+    let mut stdout_pipe = child.stdout.take().ok_or(SandboxError::FailedToStart)?;
+    let mut stderr_pipe = child.stderr.take().ok_or(SandboxError::FailedToStart)?;
 
 
 
