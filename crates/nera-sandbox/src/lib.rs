@@ -108,7 +108,7 @@ pub async fn run_local (command: &str, timeout_secs: u64) -> Result<ExecutionRes
     });
     let stderr_task = tokio::spawn(async move {
         let mut buf = Vec::new();
-        stderr_pipe.read_to_end(buf).await.map(|_| buf)
+        stderr_pipe.read_to_end(&mut buf).await.map(|_| buf)
     });
 
     // Build a Duration object from our timeout number.
