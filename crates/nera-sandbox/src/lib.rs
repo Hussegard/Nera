@@ -5,7 +5,6 @@ pub mod error;
 // "piped" means: instead of printing to the terminal, send it to us so we can read it.
 // std = standard library, built into Rust, no external dependency needed.
 use std::process::Stdio;
-use std::vec;
 
 // AsyncReadExt adds the read_to_end() method onto async streams.
 // Without this import, calling .read_to_end() on a pipe would fail to compile.
