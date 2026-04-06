@@ -1,6 +1,5 @@
 // take a command string, run it as a real process, return what happened.
 // * on comment lines is for extra clariffcications 
-pub mod error;
 // Stdio is a standard library type that controls where a process sends its output.
 // "piped" means: instead of printing to the terminal, send it to us so we can read it.
 // std = standard library, built into Rust, no external dependency needed.
@@ -18,7 +17,7 @@ use tokio::process::Command;
 // "pub use error::*" means: take everything public from error.rs and re-export it.
 // So anyone who imports nera-sandbox also automatically gets SandboxError without
 // needing a separate import line.
-pub use error::*;
+use crate::SandboxError;
 // ExecutionResult lives in nera-core. We depend on nera-core in Cargo.toml.
 use nera_core::ExecutionResult;
 
